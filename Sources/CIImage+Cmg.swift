@@ -24,7 +24,7 @@ extension CIImage {
     func generateUIImage() -> UIImage {
         let cgImage = Context.ciContext.createCGImage(self, fromRect: self.extent)
         
-        return UIImage(CGImage: cgImage, scale: UIScreen.mainScreen().scale, orientation: .Up)
+        return UIImage(CGImage: cgImage!, scale: UIScreen.mainScreen().scale, orientation: .Up)
     }
     
     func generateUIImage(originalImage: UIImage) -> UIImage {
@@ -34,6 +34,6 @@ extension CIImage {
         }
         let cgImage = Context.ciContext.createCGImage(self, fromRect: extent)
         
-        return UIImage(CGImage: cgImage, scale: originalImage.scale, orientation: originalImage.imageOrientation)
+        return UIImage(CGImage: cgImage!, scale: originalImage.scale, orientation: originalImage.imageOrientation)
     }
 }
